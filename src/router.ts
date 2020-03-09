@@ -25,7 +25,23 @@ const stackConnectivity = createStackNavigator(
   },
 );
 
-const MainStack = createStackNavigator(
+const PatrimonyStack = createStackNavigator(
+  {
+    PatrimonyCreate: {
+      screen: PatrimonyCreate,
+    },
+    PatrimonyCreateSuccess: {
+      screen: PatrimonyCreateSuccess,
+    },
+  },
+  {
+    defaultNavigationOptions: {
+      headerShown: false,
+    },
+  },
+);
+
+const RootStack = createStackNavigator(
   {
     Home: {
       screen: HomeScreen,
@@ -45,6 +61,18 @@ const MainStack = createStackNavigator(
     Partitions: {
       screen: Partitions,
     },
+    stackConnectivity: {
+      screen: stackConnectivity,
+      navigationOptions: {
+        headerShown: false,
+      },
+    },
+    patrimonyStack: {
+      screen: PatrimonyStack,
+      navigationOptions: {
+        headerShown: false,
+      },
+    },
   },
   {
     defaultNavigationOptions: {
@@ -52,28 +80,6 @@ const MainStack = createStackNavigator(
       headerStyle: {
         backgroundColor: '#3a64b1',
       },
-    },
-  },
-);
-
-const RootStack = createStackNavigator(
-  {
-    Main: {
-      screen: MainStack,
-    },
-    stackConnectivity: {
-      screen: stackConnectivity,
-    },
-    PatrimonyCreate: {
-      screen: PatrimonyCreate,
-    },
-    PatrimonyCreateSuccess: {
-      screen: PatrimonyCreateSuccess,
-    },
-  },
-  {
-    defaultNavigationOptions: {
-      headerShown: false,
     },
   },
 );
